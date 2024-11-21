@@ -1,4 +1,6 @@
-export default {
+import { defineConfig } from 'vite';
+
+export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
@@ -6,11 +8,11 @@ export default {
       },
     },
   },
-  baseUrl: process.env.NODE_ENV === 'production' ? '/positivus/' : '/',
+  base: process.env.NODE_ENV === 'production' ? '/positivus/' : '/',
   resolve: {
     alias: {
       images: 'public/images',
       fonts: 'public/fonts',
     },
   },
-};
+});
