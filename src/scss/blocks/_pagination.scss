@@ -1,0 +1,27 @@
+@use '../helpers/' as *;
+
+.pagination {
+  &__list {
+    display: flex;
+  }
+
+  &__button {
+    @include mix-reset-button;
+    @include mix-flex-center;
+    @include mix-square(24px);
+
+    color: var(--color-light);
+
+    @include med-hover {
+      color: var(--color-accent);
+    }
+
+    &.is-current {
+      color: var(--color-accent);
+    }
+
+    svg {
+      @include mix-square(14px);
+    }
+  }
+}

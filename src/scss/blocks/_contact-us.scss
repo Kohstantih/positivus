@@ -1,0 +1,76 @@
+@use '../helpers/' as *;
+
+.contact-us {
+  overflow-x: hidden;
+
+  @include med-mobile-above {
+    position: relative;
+    padding: 60px 100px 80px;
+    background-color: var(--color-gray);
+    border-radius: var(--border-radius-large);
+  }
+
+  &::after {
+    --contactUsImageOffsetY: 62px;
+
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    translate: -50% -50%;
+
+    height: calc(100% - var(--contactUsImageOffsetY) * 2);
+    aspect-ratio: 1;
+
+    background: url('/images/contact-us__bg.svg') center/contain no-repeat;
+
+    @include med-tablet {
+      display: none;
+    }
+  }
+
+  &__form,
+  &__body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__form {
+    @include med-tablet-above {
+      max-width: 566px;
+    }
+
+    @include med-mobile-above {
+      row-gap: 40px;
+    }
+  }
+
+  &__request-types,
+  &__body {
+    @include med-mobile {
+      background-color: var(--color-gray);
+    }
+  }
+
+  &__request-types {
+    @include med-mobile {
+      padding: 40px 52px 36px;
+
+      border-top-left-radius: var(--border-radius-large);
+      border-top-right-radius: var(--border-radius-large);
+    }
+  }
+
+  &__body {
+    row-gap: 25px;
+
+    @include med-mobile {
+      row-gap: 20px;
+      padding: 10px 30px 50px;
+      margin-bottom: 30px;
+
+      border-bottom-left-radius: var(--border-radius-large);
+      border-bottom-right-radius: var(--border-radius-large);
+    }
+  }
+}

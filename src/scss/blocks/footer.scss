@@ -1,0 +1,157 @@
+@use '../helpers/' as *;
+
+.footer {
+  @include med-mobile {
+    padding-inline: 0;
+  }
+
+  &__inner {
+    padding: 55px 60px 50px;
+
+    color: var(--color-light);
+    background-color: var(--color-dark);
+
+    @include med-mobile-above {
+      border-top-left-radius: var(--border-radius-large);
+      border-top-right-radius: var(--border-radius-large);
+    }
+
+    @include med-mobile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 37px;
+      padding: 50px var(--container-padding-x) 30px;
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 30px;
+
+    &:not(:last-child) {
+      margin-bottom: 66px;
+    }
+
+    @include med-tablet {
+      flex-direction: column;
+      align-items: center;
+      row-gap: 37px;
+    }
+
+    @include med-mobile {
+      display: contents;
+    }
+  }
+
+  &__menu {
+    &-list {
+      display: flex;
+      align-items: center;
+      column-gap: 40px;
+
+      @include med-mobile {
+        flex-direction: column;
+        row-gap: 15px;
+      }
+    }
+
+    &-link {
+      display: inline-flex;
+      align-items: center;
+      height: 30px;
+
+      text-decoration: underline;
+
+      @include med-hover {
+        color: var(--color-accent);
+      }
+    }
+  }
+
+  &__soc1als {
+    @include med-mobile {
+      order: 1;
+    }
+  }
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 50px;
+
+    @include med-mobile-above {
+      &:not(:last-child) {
+        margin-bottom: 50px;
+        padding-bottom: 50px;
+        border-bottom: 1px solid var(--color-light);
+      }
+    }
+
+    @include med-mobile {
+      flex-direction: column;
+      align-items: center;
+      row-gap: inherit;
+    }
+
+    @include med-mobile-s {
+      width: 100%;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    row-gap: 27px;
+
+    @include med-mobile {
+      align-items: center;
+      text-align: center;
+    }
+
+    &-title {
+      color: var(--color-dark);
+    }
+
+    &-body {
+      font-style: normal;
+
+      p {
+        --paragraphMarginBottom: 20px;
+      }
+
+      a {
+        @include med-hover {
+          color: var(--color-accent);
+        }
+      }
+    }
+  }
+
+  &__extra {
+    display: flex;
+    column-gap: 40px;
+
+    @include med-mobile {
+      order: 2;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 15px;
+      width: 100%;
+      padding-top: 37px;
+
+      border-top: 1px solid currentColor;
+    }
+  }
+
+  &__privacy-policy-link {
+    text-decoration: underline;
+
+    @include med-hover {
+      color: var(--color-accent);
+    }
+  }
+}

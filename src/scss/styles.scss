@@ -1,0 +1,46 @@
+@use 'normalize';
+@use 'fonts';
+@use 'variables';
+@use 'utils';
+@use 'globals';
+
+// * blocks
+// ** common
+@use 'blocks/button';
+@use 'blocks/grid';
+@use 'blocks/burger-button';
+@use 'blocks/cross-button';
+@use 'blocks/field';
+@use 'blocks/radios';
+@use 'blocks/radio';
+@use 'blocks/section';
+@use 'blocks/puddle-bg';
+
+// ** section
+@use 'blocks/header';
+
+@use 'blocks/hero';
+
+@use 'blocks/services';
+@use 'blocks/service-card';
+@use 'blocks/banner';
+
+@use 'blocks/studies';
+
+@use 'blocks/process';
+
+@use 'blocks/team';
+@use 'blocks/team-card';
+
+@use 'blocks/reviews';
+@use 'blocks/reviews-card';
+@use 'blocks/pagination';
+
+@use 'blocks/contact-us';
+
+@use 'blocks/footer.scss';
+@use 'blocks/soc1als';
+@use 'blocks/subscribe-form';
+
+// ** modals
+@use 'blocks/mobile-overlay';

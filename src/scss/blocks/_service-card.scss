@@ -1,0 +1,112 @@
+@use '../helpers' as *;
+
+.service-card {
+  --bgColor: var(--color-gray);
+  --titleBgColor: var(--color-accent);
+  --linkColor: var(--color-dark);
+  --linkArrowColor: var(--color-accent);
+
+  display: flex;
+  justify-content: space-between;
+  column-gap: 30px;
+  min-height: 310px;
+  padding: 50px;
+
+  background-color: var(--bgColor);
+  border: var(--border);
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--shadow);
+
+  @include med-mobile {
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 27px;
+  }
+
+  &--accent {
+    --bgColor: var(--color-accent);
+    --titleBgColor: var(--color-gray);
+  }
+
+  &--dark {
+    --bgColor: var(--color-dark);
+    --titleBgColor: var(--color-gray);
+    --linkArrowColor: var(--color-dark);
+    --linkColor: var(--color-light);
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 30px;
+
+    @include med-mobile {
+      display: contents;
+    }
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    &-line {
+      background-color: var(--titleBgColor);
+    }
+
+    @include med-mobile {
+      grid-column: -1 / 1;
+    }
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    column-gap: 15px;
+
+    font-size: 20px;
+
+    color: var(--linkColor);
+
+    @include med-hover {
+      opacity: 0.7;
+    }
+
+    @include med-mobile {
+      align-self: end;
+    }
+
+    &-icon-wrapper {
+      @include mix-flex-center;
+      @include mix-square(41px);
+
+      background-color: currentColor;
+      border-radius: 50%;
+
+      svg {
+        color: var(--linkArrowColor);
+      }
+    }
+
+    &-label {
+      @include med-mobile {
+        @include mix-visually-hidden;
+      }
+    }
+  }
+
+  &__image {
+    align-self: center;
+
+    @include med-desktop {
+      max-width: 50%;
+      height: auto;
+    }
+
+    @include med-mobile {
+      min-width: clamp(165px, 40vw, 300px);
+      margin-left: auto;
+    }
+  }
+}

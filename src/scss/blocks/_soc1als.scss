@@ -1,0 +1,21 @@
+@use '../helpers/' as *;
+
+.soc1als {
+  &__list {
+    display: flex;
+    column-gap: 20px;
+  }
+
+  &__link {
+    @include mix-flex-center(true);
+    @include mix-square(30px);
+
+    color: var(--color-dark);
+    background-color: var(--color-light);
+    border-radius: 50%;
+
+    @include med-hover {
+      background-color: var(--color-accent);
+    }
+  }
+}

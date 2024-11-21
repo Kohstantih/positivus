@@ -1,0 +1,40 @@
+@use '../helpers/' as *;
+
+.radio {
+  --radioBgColor: transparent;
+
+  display: flex;
+  align-items: center;
+  column-gap: 14px;
+
+  transition-duration: var(--transition-duration);
+
+  &:has(&__input:checked) {
+    --radioBgColor: var(--color-accent);
+  }
+
+  @include med-hover {
+    opacity: 0.6;
+  }
+
+  &__emulator {
+    @include mix-flex-center;
+    @include mix-square(28px);
+
+    position: relative;
+
+    background-color: var(--color-light);
+    border: var(--border);
+    border-radius: 50%;
+
+    &::after {
+      @include mix-abs-center;
+      @include mix-square(60%);
+
+      content: '';
+      background-color: var(--radioBgColor);
+      border-radius: inherit;
+      transition-duration: var(--transition-duration);
+    }
+  }
+}

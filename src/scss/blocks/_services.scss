@@ -1,0 +1,21 @@
+@use '../helpers/' as *;
+
+.services {
+  &__list {
+    &:not(:last-child) {
+      margin-bottom: 100px;
+
+      @include med-mobile {
+        margin-bottom: 70px;
+      }
+    }
+  }
+
+  &__item {
+    max-width: 600px;
+
+    @include med-mobile {
+      width: 100%;
+    }
+  }
+}

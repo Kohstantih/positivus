@@ -1,0 +1,57 @@
+@use '../helpers/' as *;
+
+.banner {
+  --bannerImageOffsetY: 24px;
+
+  padding-block: var(--bannerImageOffsetY);
+
+  @include med-tablet {
+    --bannerImageOffsetY: 0;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: var(--color-gray);
+    border-radius: var(--border-radius-large);
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    row-gap: 26px;
+    padding: 60px;
+
+    @include med-tablet {
+      padding: 50px;
+    }
+
+    @include med-mobile {
+      row-gap: 20px;
+
+      align-items: center;
+      margin-inline: auto;
+    }
+  }
+
+  &__description {
+    max-width: 500px;
+  }
+
+  &__image {
+    margin-right: 135px;
+    margin-block: calc(-1 * var(--bannerImageOffsetY));
+
+    @include med-desktop {
+      margin-right: 60px;
+    }
+
+    @include med-tablet {
+      max-width: 40%;
+      height: auto;
+    }
+  }
+}
